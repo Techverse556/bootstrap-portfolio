@@ -1,0 +1,29 @@
+/* style.css */
+.sidebar {
+    width: 20%;
+    position: fixed;
+    height: 100%;
+}
+
+.content {
+    margin-left: 25%;
+}
+
+.hero {
+    background-color: #f8f9fa;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.service-item img {
+    margin-bottom: 10px;
+}
+
+.price-item {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.price-item h4 {
+    color: #ffcc00;
+}

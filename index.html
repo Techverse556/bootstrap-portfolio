@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/43875602af.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      background-color: #f3effb; /* Light lilac background */
+    }
+
+    .sidebar {
+      width: 20%;
+      position: fixed;
+      height: 100%;
+      background-color: #ffffff;
+      padding: 20px;
+    }
+    
+    .content {
+      margin-left: 25%;
+      padding: 20px;
+    }
+
+    .hero {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero img {
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+      margin-left: 20px;
+    }
+
+    .price-item {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .right-sidebar {
+      position: fixed;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .right-sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .right-sidebar ul li {
+      margin-bottom: 15px;
+    }
+
+    .right-sidebar ul li a {
+      font-size: 24px;
+      color: #ffcc00;
+      text-decoration: none;
+    }
+
+    .price-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .price-list li {
+      margin-bottom: 10px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .price-list li i {
+      color: #ffcc00;
+      margin-right: 10px;
+    }
+      .service-item {
+         background-color: white; 
+         border-radius: 8px;     
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease; 
+}
+
+.service-item:hover {
+    transform: translateY(-10px); 
+}
+
+h4 {
+    color: #333;
+    font-weight: bold;
+}
+
+p {
+    color: #777;
+}
+
+.services .row .col-md-4 {
+    margin-bottom: 20px;
+}
+
+.recommendations {
+    background-color: #f3effb; 
+    padding: 60px 0;
+}
+
+.card {
+    border: none; 
+    background-color: white; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.card img {
+    border-radius: 50%; 
+}
+
+.stars {
+    font-size: 18px;
+    color: #ffdd00; 
+}
+
+h4 {
+    font-weight: bold;
+    color: #333;
+}
+
+p {
+    color: #777;
+}
+
+.card p.text-muted {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.education {
+    background-color: #f3effb; 
+    padding: 60px 0;
+}
+
+.card {
+    border: none;
+    background-color: white; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.card p {
+    color: #555;
+}
+
+.text-muted {
+    font-size: 14px;
+    font-style: italic;
+}
+.work-history {
+    background-color: #f3effb; 
+    padding: 60px 0;
+}
+
+.work-history .card {
+    border: none;
+    background-color: white; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.work-history .card-title {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.work-history .text-muted {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.work-history .card p {
+    color: #555;
+}
+
+.work-history h2 {
+    font-size: 2rem;
+    color: #333;
+}
+.portfolio-section {
+    background-color: #f3effb;
+    padding: 60px 0;
+}
+
+.portfolio-item {
+    background-color: white; 
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px #fff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px); 
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.portfolio-item h4 {
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+.portfolio-item p {
+    font-size: 0.9rem;
+    color: #fff;
+}
+.blog-section {
+    background-color: #f3effb; 
+    padding: 60px 0;
+}
+
+.blog-item {
+    background-color: white; 
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease-in-out;
+}
+
+.blog-item:hover {
+    transform: translateY(-5px); 
+}
+
+.blog-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.blog-item h4 {
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+.blog-item p {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.blog-item a {
+    font-size: 0.9rem;
+    color: orange;
+}
+.contact-info-section {
+    background-color: #f3effb; 
+    padding: 60px 0;
+}
+
+.contact-info-section h2 {
+    color: #333;
+    font-size: 2rem;
+}
+
+.contact-info-section p {
+    color: #777;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    background-color: white; 
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.contact-form .form-control {
+    background-color: #f3effb; 
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.contact-form .form-control:focus {
+    border-color: orange; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+.contact-form .btn {
+    background-color: orange; 
+    color: white;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+.contact-form .btn:hover {
+    background-color: orangered; 
+}
+
+.contact-form .btn:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(215, 125, 22, 0.5);
+}
+.map-section iframe {
+    border: none;
+    width: 100%;
+    height: 450px;
+}
+.footer-section {
+    background-color: #fff; 
+    color: #ffffff; /* White text */
+}
+
+.footer-section h5 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.footer-section a {
+    color: #ffffff; /* White links */
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #007bff; /* Hover effect for links */
+}
+
+.footer-section i {
+    font-size: 1.2rem;
+}
+
+.footer-section .text-md-end {
+    text-align: right;
+}
+
+.footer-section p {
+    margin-bottom: 5px;
+}
+
+.footer-section .mb-0 {
+    margin-bottom: 0;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.left-sidebar {
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .blog-item h4 {
+        font-size: 1rem;
+    }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .portfolio-item h4 {
+        font-size: 1rem;
+    }
+}
+
+  
+  </style>
+</head>
+<body>
+
+<!-- Left Sidebar (Profile & Info) -->
+<aside class="sidebar">
+  <div class="text-center">
+    <img src="./asset/image copy.png" alt="Profile Picture" class="img-fluid rounded-circle mb-3" width="100">
+    <h4>Rayan Adlirdard</h4>
+    <p class="text-muted">Front-End Developer</p>
+  </div>
+
+  <!-- Personal Info -->
+  <ul class="list-unstyled">
+    <li><strong>Age:</strong> 24</li>
+    <li><strong>Residence:</strong> BD</li>
+    <li><strong>Freelance:</strong> Available</li>
+    <li><strong>Address:</strong> Dhaka, Bangladesh</li>
+  </ul>
+
+  <!-- Languages -->
+  <h5>Languages</h5>
+  <ul class="list-unstyled">
+    <li>Bangla - 100%</li>
+    <li>English - 80%</li>
+    <li>Spanish - 60%</li>
+  </ul>
+
+  <!-- Skills -->
+  <h5>Skills</h5>
+  <ul class="list-unstyled">
+    <li>HTML - 90%</li>
+    <li>CSS - 85%</li>
+    <li>JavaScript - 80%</li>
+  </ul>
+
+  <button class="btn btn-warning mt-4">Contact Me</button>
+</aside>
+
+<!-- Right Sidebar with Icons -->
+<div class="right-sidebar">
+  <ul>
+    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+  </ul>
+</div>
+
+<!-- Main Content Section -->
+<main class="content">
+  <div class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div>
+        <h1>I’m Rayan Adlirdard <span class="text-warning">Front-End Developer</span></h1>
+        <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit. Et, Voluptat Feugiat Placera.</p>
+        <button class="btn btn-warning">Hire Me</button>
+      </div>
+      <img src="./asset/image copy.png" alt="Profile Image">
+    </section>
+<!-- Services Section -->
+<section class="services my-5">
+  <h2 class="text-center mb-4">My Services</h2>
+  <div class="row text-center">
+    <!-- Service 1: Web Development -->
+    <div class="col-md-4 mb-4">
+      <div class="service-item p-3">
+        <img src="./asset/—Pngtree—developing programming responsive website icon_5225663.png" alt="Web Development" class="img-fluid mb-3" width="50">
+        <h4>Web Development</h4>
+        <p>Building responsive and modern websites tailored to your needs.</p>
+      </div>
+    </div>
+    
+    <!-- Service 2: UI/UX Design -->
+    <div class="col-md-4 mb-4">
+      <div class="service-item p-3">
+        <img src="./asset/—Pngtree—developing programming responsive website icon_5225663.png" alt="UI/UX Design" class="img-fluid mb-3" width="50">
+        <h4>UI/UX Design</h4>
+        <p>Designing intuitive and user-friendly interfaces for web and mobile apps.</p>
+      </div>
+    </div>
+
+    <!-- Service 3: Sound Design -->
+    <div class="col-md-4 mb-4">
+      <div class="service-item p-3">
+        <img src="./asset/download.jpeg" alt="Sound Design" class="img-fluid mb-3" width="50">
+        <h4>Sound Design</h4>
+        <p>Creating immersive sound experiences for various media platforms.</p>
+      </div>
+    </div>
+
+    <!-- Service 4: Game Design -->
+    <div class="col-md-4 mb-4">
+      <div class="service-item p-3">
+        <img src="./asset/—Pngtree—developing programming responsive website icon_5225663.png" alt="Game Design" class="img-fluid mb-3" width="50">
+        <h4>Game Design</h4>
+        <p>Conceptualizing and designing engaging games with captivating gameplay.</p>
+      </div>
+    </div>
+
+    <!-- Service 5: Photography -->
+    <div class="col-md-4 mb-4">
+      <div class="service-item p-3">
+        <img src="./asset/photography-logo-49523.png" alt="Photography" class="img-fluid mb-3" width="50">
+        <h4>Photography</h4>
+        <p>Capturing high-quality images for professional and personal projects.</p>
+      </div>
+    </div>
+
+    <!-- Service 6: Accounting -->
+    <div class="col-md-4 mb-4">
+      <div class="service-item p-3">
+        <img src="./asset/—Pngtree—developing programming responsive website icon_5225663.png" alt="Accounting" class="img-fluid mb-3" width="50">
+        <h4>Accounting</h4>
+        <p>Providing professional accounting services to manage finances effectively.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Price Plans Section -->
+    <section class="pricing my-5">
+      <h2 class="text-center">Price Plans</h2>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <div class="price-item">
+            <h4>Silver</h4>
+            <p>$00.00 / month</p>
+            <ul class="price-list">
+              <li><i class="fa fa-check"></i> 5 Web Pages</li>
+              <li><i class="fa fa-check"></i> Basic Design</li>
+              <li><i class="fa fa-check"></i> Responsive Layout</li>
+              <li><i class="fa fa-times"></i> E-commerce Support</li>
+              <li><i class="fa fa-times"></i> SEO Optimization</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="price-item">
+            <h4>Gold</h4>
+            <p>$50.00 / month</p>
+            <ul class="price-list">
+              <li><i class="fa fa-check"></i> 10 Web Pages</li>
+              <li><i class="fa fa-check"></i> Advanced Design</li>
+              <li><i class="fa fa-check"></i> Responsive Layout</li>
+              <li><i class="fa fa-check"></i> E-commerce Support</li>
+              <li><i class="fa fa-check"></i> SEO Optimization</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="price-item">
+            <h4>Diamond</h4>
+            <p>$80.00 / month</p>
+            <ul class="price-list">
+              <li><i class="fa fa-check"></i> Unlimited Web Pages</li>
+              <li><i class="fa fa-check"></i> Premium Design</li>
+              <li><i class="fa fa-check"></i> Responsive Layout</li>
+              <li><i class="fa fa-check"></i> E-commerce Support</li>
+              <li><i class="fa fa-check"></i> SEO Optimization</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recommendations Section -->
+<section class="recommendations my-5">
+  <h2 class="text-center mb-4">Recommendations</h2>
+  <div class="container">
+    <div class="row text-center">
+      <!-- Recommendation 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 p-3 bg-white shadow-sm rounded">
+          <img src="./asset/pexels-cottonbro-4098157.jpg" alt="Client 1" class="rounded-circle mb-3 mx-auto" width="80">
+          <h4>James Doe</h4>
+          <p class="text-muted">Great Quality</p>
+          <div class="stars mb-3">
+            <span class="text-warning">★ ★ ★ ★ ★</span>
+          </div>
+          <p>"Excellent service with timely delivery. Very satisfied with the final product."</p>
+        </div>
+      </div>
+      
+      <!-- Recommendation 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 p-3 bg-white shadow-sm rounded">
+          <img src="./asset/pexels-imagevain-2346011.jpg" alt="Client 2" class="rounded-circle mb-3 mx-auto" width="80">
+          <h4>Amanda Patel</h4>
+          <p class="text-muted">Amazing Work</p>
+          <div class="stars mb-3">
+            <span class="text-warning">★ ★ ★ ★ ★</span>
+          </div>
+          <p>"The attention to detail and creativity exceeded my expectations. Highly recommended!"</p>
+        </div>
+      </div>
+      
+      <!-- Recommendation 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 p-3 bg-white shadow-sm rounded">
+          <img src="./asset/pexels-lucaspezeta-3647412.jpg" alt="Client 3" class="rounded-circle mb-3 mx-auto" width="80">
+          <h4>John Wilson</h4>
+          <p class="text-muted">Superb Service</p>
+          <div class="stars mb-3">
+            <span class="text-warning">★ ★ ★ ★ ★</span>
+          </div>
+          <p>"Very professional work, and communication was easy. I’m thrilled with the result!"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Education Section -->
+<section class="education my-5">
+  <h2 class="text-center mb-4">Education</h2>
+  <div class="container">
+    <div class="row">
+      <!-- Education 1 -->
+      <div class="col-md-6 mb-4">
+        <div class="card p-4 bg-white shadow-sm rounded">
+          <h4 class="card-title">University of Texas</h4>
+          <p class="text-muted mb-2">Certificate of Web Training</p>
+          <p><strong>Period:</strong> Jan 2018 - Dec 2020</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+
+      <!-- Education 2 -->
+      <div class="col-md-6 mb-4">
+        <div class="card p-4 bg-white shadow-sm rounded">
+          <h4 class="card-title">Programming Course</h4>
+          <p class="text-muted mb-2">Student</p>
+          <p><strong>Period:</strong> Jan 2017 - Dec 2018</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet risus nullam eget felis eget nunc lobortis mattis.</p>
+        </div>
+      </div>
+
+      <!-- Education 3 -->
+      <div class="col-md-6 mb-4">
+        <div class="card p-4 bg-white shadow-sm rounded">
+          <h4 class="card-title">Web Developer Course</h4>
+          <p class="text-muted mb-2">Certificate of Web Training</p>
+          <p><strong>Period:</strong> Mar 2016 - Mar 2017</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat vivamus at augue eget arcu dictum varius duis.</p>
+        </div>
+      </div>
+
+      <!-- Education 4 -->
+      <div class="col-md-6 mb-4">
+        <div class="card p-4 bg-white shadow-sm rounded">
+          <h4 class="card-title">Junior Web Designer</h4>
+          <p class="text-muted mb-2">Student</p>
+          <p><strong>Period:</strong> Jan 2015 - Dec 2016</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper feugiat nibh sed pulvinar proin gravida.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Work History Section -->
+<section class="work-history my-5">
+  <h2 class="text-center mb-4">Work History</h2>
+  <div class="container">
+    <div class="row">
+      <!-- Work History 1 -->
+      <div class="col-md-6 mb-4">
+        <div class="card p-4 bg-white shadow-sm rounded">
+          <h4 class="card-title">Lead Web Designer</h4>
+          <p class="text-muted mb-2">Google - Remote</p>
+          <p><strong>Period:</strong> Jan 2021 - Present</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+
+      <!-- Work History 2 -->
+      <div class="col-md-6 mb-4">
+        <div class="card p-4 bg-white shadow-sm rounded">
+          <h4 class="card-title">Senior UI/UX Designer</h4>
+          <p class="text-muted mb-2">Apple - San Francisco, CA</p>
+          <p><strong>Period:</strong> Mar 2019 - Dec 2020</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+        </div>
+      </div>
+
+      <!-- Work History 3 -->
+      <div class="col-md-6 mb-4">
+        <div class="card p-4 bg-white shadow-sm rounded">
+          <h4 class="card-title">Junior Web Developer</h4>
+          <p class="text-muted mb-2">Facebook - Menlo Park, CA</p>
+          <p><strong>Period:</strong> May 2017 - Feb 2019</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat vivamus at augue eget arcu dictum varius duis.</p>
+        </div>
+      </div>
+
+      <!-- Work History 4 -->
+      <div class="col-md-6 mb-4">
+        <div class="card p-4 bg-white shadow-sm rounded">
+          <h4 class="card-title">Web Designer Intern</h4>
+          <p class="text-muted mb-2">Microsoft - Redmond, WA</p>
+          <p><strong>Period:</strong> Jun 2016 - Apr 2017</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper feugiat nibh sed pulvinar proin gravida.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Portfolio Section -->
+<section class="portfolio-section my-5">
+  <h2 class="text-center mb-4">Portfolio</h2>
+  <p class="text-center mb-5">Here are some of the projects I’ve worked on.</p>
+  
+  <!-- Portfolio Filters (Optional) -->
+  <div class="text-center mb-4">
+    <button class="btn btn-outline-primary mx-2">All Categories</button>
+    <button class="btn btn-outline-primary mx-2">UI Design</button>
+    <button class="btn btn-outline-primary mx-2">Web Templates</button>
+    <button class="btn btn-outline-primary mx-2">Logos</button>
+    <button class="btn btn-outline-primary mx-2">Branding</button>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <!-- Portfolio Item 1 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="portfolio-item">
+          <img src="asset/pexels-designecologist-1779487.jpg" class="img-fluid" alt="Project 1">
+          <h4 class="mt-3">Project Title 1</h4>
+          <p class="text-muted">Category: UI Design</p>
+        </div>
+      </div>
+
+      <!-- Portfolio Item 2 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="portfolio-item">
+          <img src="./asset/pexels-pixabay-38519.jpg" class="img-fluid" alt="Project 2">
+          <h4 class="mt-3">Project Title 2</h4>
+          <p class="text-muted">Category: Web Templates</p>
+        </div>
+      </div>
+
+      <!-- Portfolio Item 3 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="portfolio-item">
+          <img src="./asset/pexels-scottwebb-430205.jpg" class="img-fluid" alt="Project 3">
+          <h4 class="mt-3">Project Title 3</h4>
+          <p class="text-muted">Category: Logos</p>
+        </div>
+      </div>
+
+      <!-- Portfolio Item 4 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="portfolio-item">
+          <img src="./asset/pexels-enginakyurt-1437318.jpg" class="img-fluid" alt="Project 4">
+          <h4 class="mt-3">Project Title 4</h4>
+          <p class="text-muted">Category: Branding</p>
+        </div>
+      </div>
+
+      <!-- Portfolio Item 5 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="portfolio-item">
+          <img src="./asset/pexels-luis-gomes-166706-546819.jpg" class="img-fluid" alt="Project 5">
+          <h4 class="mt-3">Project Title 5</h4>
+          <p class="text-muted">Category: UI Design</p>
+        </div>
+      </div>
+
+      <!-- Portfolio Item 6 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="portfolio-item">
+          <img src="./asset/pexels-andrew-5821295.jpg" class="img-fluid" alt="Project 6">
+          <h4 class="mt-3">Project Title 6</h4>
+          <p class="text-muted">Category: Web Templates</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Blog Section -->
+<section class="blog-section my-5">
+  <h2 class="text-center mb-4">Blog</h2>
+  <p class="text-center mb-5">Check out my latest articles and tutorials.</p>
+
+  <div class="container">
+    <div class="row">
+      <!-- Blog Post 1 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="blog-item">
+          <img src="./asset/pexels-scottwebb-430205 copy.jpg" class="img-fluid" alt="Blog Post 1">
+          <h4 class="mt-3">How to Make Web Templates</h4>
+          <p class="text-muted">Learn how to create stunning web templates with this step-by-step guide.</p>
+          <a href="#" class="btn btn-outline-primary mt-2">Read More</a>
+        </div>
+      </div>
+
+      <!-- Blog Post 2 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="blog-item">
+          <img src="/asset/pexels-luis-gomes-166706-546819.jpg" class="img-fluid" alt="Blog Post 2">
+          <h4 class="mt-3">How to Make Business Cards</h4>
+          <p class="text-muted">A tutorial on designing professional business cards that stand out.</p>
+          <a href="#" class="btn btn-outline-primary mt-2">Read More</a>
+        </div>
+      </div>
+
+      <!-- Blog Post 3 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="blog-item">
+          <img src="./asset/pexels-pixabay-356056.jpg" class="img-fluid" alt="Blog Post 3">
+          <h4 class="mt-3">How to Make Flyer Design</h4>
+          <p class="text-muted">Tips and tricks to create eye-catching flyer designs.</p>
+          <a href="#" class="btn btn-outline-primary mt-2">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Additional Blog Post -->
+<div class="col-lg-4 col-md-6 mb-4">
+  <div class="blog-item">
+      <img src="/asset/pexels-lucaspezeta-3647412.jpg" class="img-fluid" alt="Blog Post 4">
+      <h4 class="mt-3">New Blog Post Title</h4>
+      <p class="text-muted">Short description of the blog post.</p>
+      <a href="#" class="btn btn-outline-primary mt-2">Read More</a>
+  </div>
+</div>
+<!-- Contact Info Section -->
+<section class="contact-info-section my-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Get in Touch</h2>
+    <p class="text-center mb-5">Feel free to reach out to me through the form below.</p>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="contact-form bg-light p-5 shadow-sm rounded">
+          <form action="#" method="post">
+            <div class="form-group mb-4">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group mb-4">
+              <label for="email" class="form-label">Your Email</label>
+              <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group mb-4">
+              <label for="message" class="form-label">Your Message</label>
+              <textarea id="message" rows="5" class="form-control" placeholder="Enter your message" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Map Section -->
+<section class="map-section my-5">
+  <div class="container-fluid px-0">
+    <div class="row">
+      <div class="col-12">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093716!2d144.95373631544816!3d-37.81627974205124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43bfecb947%3A0x5045675218ceedfd!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1632496638785!5m2!1sen!2sus" 
+          width="100%" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Footer Section -->
+<footer class="footer-section bg-dark text-light py-4">
+  <div class="container">
+    <div class="row">
+      <!-- Social Media Links -->
+      <div class="col-md-6">
+        <h5 class="mb-3">Follow Me</h5>
+        <a href="#" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-light me-3"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="col-md-6 text-md-end mt-3 mt-md-0">
+        <h5>Contact Me</h5>
+        <p>Email: <a href="mailto:your.email@example.com" class="text-light">your.email@example.com</a></p>
+        <p>Phone: <a href="tel:+1234567890" class="text-light">+123 456 7890</a></p>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Text -->
+    <div class="row mt-4">
+      <div class="col-12 text-center">
+        <p class="mb-0">&copy; 2024 Your Name. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</section>
+
+  </div>
+</main>
+
+
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
